@@ -1,7 +1,17 @@
 const Card = ({ character }) => (
   <>
-    <h2>{character?.name}</h2>
-    <img src={character?.image} alt={character?.name} />
+    <div className="card" style={{width: "18rem"}}>
+      <img src={character?.image} className="card-img-top" alt={character?.name} />
+      <div className="card-body">
+        <h5 className="card-title">{character?.name}e</h5>
+        <p className="card-text">
+          Especie: {character?.species}
+        </p>
+        <p className="card-text">
+          Genero: {character?.gender}
+        </p>
+      </div>
+    </div>
   </>
 );
 

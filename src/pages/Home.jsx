@@ -3,9 +3,13 @@ import Characters from "../components/Characters";
 import { useCharacters } from "../context/CharactersContext";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import Navbar from "../components/Navbar";
+import styles from './Home.module.css';
+
 
 const Home = () => {
   const { characters } = useCharacters();
+  console.log("🚀 ~ Home ~ characters:", characters)
   const [allCharacters, setallCharacters] = useState(false);
   const [id, setId] = useState("");
   const navigate = useNavigate();
@@ -41,17 +45,7 @@ const Home = () => {
 
   return (
     <>
-      <h1>Rick and Morty</h1>
-      <div>
-        <input
-          type="text"
-          value={id}
-          onChange={(e) => setId(e.target.value)}
-          placeholder="ID"
-        />
-        <button onClick={handleSearch}>Buscar un personaje por id</button>
-      </div>
-      <button onClick={handleAllCharacters}>Ver todos los personajes</button>
+      <Navbar id={id} handleSearch={handleSearch} setId={setId} handleAllCharacters={handleAllCharacters}/>
       {allCharacters && <Characters characters={characters} />}
     </>
   );
