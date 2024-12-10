@@ -9,7 +9,6 @@ import styles from './Home.module.css';
 
 const Home = () => {
   const { characters } = useCharacters();
-  console.log("🚀 ~ Home ~ characters:", characters)
   const [allCharacters, setallCharacters] = useState(false);
   const [id, setId] = useState("");
   const navigate = useNavigate();
