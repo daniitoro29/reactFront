@@ -3,7 +3,7 @@ import Home from "./pages/Home";
 import { CharactersProvider } from "./context/CharactersContext";
 import CharacterId from "./components/CharacterId";
 
-import Characters from "./components/Characters";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -12,6 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/character/:id" element={<CharacterId />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </CharactersProvider>
